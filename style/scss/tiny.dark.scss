@@ -1,0 +1,260 @@
+// Colors
+$primary: hsl(171, 100%, 41%);
+$link: hsl(217, 71%, 53%);
+$info: hsl(204, 86%, 53%);
+$success: hsl(141, 53%, 53%);
+$warning: hsl(48, 100%, 67%);
+$danger: hsl(348, 100%, 61%);
+
+$white: hsl(0, 0%, 100%);
+$white-ter: hsl(0, 0%, 96%);
+$grey-lighter: hsl(0, 0%, 86%);
+$grey-light: hsl(0, 0%, 71%);
+$grey: hsl(0, 0%, 48%);
+$grey-dark: hsl(0, 0%, 29%);
+$grey-darker: hsl(0, 0%, 21%);
+$black-ter: hsl(0, 0%, 14%);
+$black: hsl(0, 0%, 4%);
+
+$dark-white: hsl(0, 0%, 15%);
+$dark-white-ter: hsl(0, 0%, 13%);
+
+body {
+    &.dark {
+        background-color: $dark-white;
+
+        p, a, li, h1, h2, h3, h4, h5, h6, pre {
+            color: $grey-lighter;
+        }
+        
+        .bg-color-white { background-color: $dark-white; }
+        .bg-color-white-ter { background-color: $dark-white-ter; }
+
+        .header {
+        
+            .logo {
+                img {
+                    filter: invert(100%) sepia(5%) saturate(50%) hue-rotate(38deg) brightness(112%) contrast(92%);
+                }
+            }
+        
+            nav {
+                ul, ol {
+                    li {
+                        a {
+                            &:hover:not(.button) {
+                                background-color: $dark-white-ter;
+                                color: $primary;
+                            }
+        
+                            &.button {
+                                &:hover, &:focus {
+                                    filter: brightness(95%);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        
+            .mobile-menu {
+                .container {
+                    background-color: $dark-white-ter;
+        
+                    .mobile-close {
+                        &:after {
+                            color: $grey-lighter;
+                        }
+                    }
+        
+                    ul, ol {
+                        li {
+                            a {
+                                font-size: 2rem;
+                                font-weight: 600;
+                                color: $grey-lighter;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .bottom-menu {
+            background-color: $dark-white-ter;
+        }
+
+        .modal {
+            background-color: $dark-white;
+        }
+
+        hr {
+            background-color: $grey-darker;
+        }
+
+        .lds-ring {
+            div {
+                border: 8px solid $grey-darker;
+                border-color: $grey-darker transparent transparent transparent;
+            }
+        }
+
+        .alert {
+            background-color: $dark-white;
+            color: $white;
+        }
+
+        .placeholder {
+            background-image: linear-gradient(
+            90deg,
+            #333333 0%, #333333 40%,
+            #444444 50%, #444444 55%,
+            #333333 65%, #333333 100%
+            );
+        }
+        
+        .dropdown {
+            .dropdown-content {
+                background-color: $dark-white;
+            }
+        }
+        
+        .input, .textarea {
+            background-color: $dark-white-ter;
+            border: 2px solid $grey-dark;
+            color: $grey-lighter;
+        
+            transition: 50ms all;
+        
+            &:hover {
+                border: 2px solid $grey;
+            }
+        
+            &:focus {
+                border: 2px solid $grey;
+                outline: none;
+            }
+        }
+
+        .tag-input {
+            border: 2px solid $grey-dark;
+            background-color: $dark-white-ter;
+        
+            .tag-input__tag {
+                background-color: $grey-darker;
+                color: $white;
+            }
+        
+            .tag-input__tag>span {
+                i {
+                    color: $grey-lighter;
+                    transition: .1s;
+        
+                    &:hover {
+                        color: $grey;
+                    }
+                }
+            }
+
+            .tag-input__text {
+                color: $white;
+            }
+
+            transition: 50ms all;
+
+            &:hover {
+                border: 2px solid $grey-light;
+            }
+        
+            &:focus {
+                border: 2px solid $grey-light;
+                outline: 1px solid $primary;
+            }
+        }
+        
+        .select-menu {
+        
+            .select-selected {
+                background-color: $dark-white;
+        
+                transition: 50ms all;
+                &:hover {
+                    border: 2px solid $grey-light;
+                }
+        
+                &::after {
+                    border-color: $grey transparent transparent transparent;
+                }
+        
+                &.select-arrow-active {
+                    &::after {
+                        border-color: transparent transparent $grey transparent;
+                    }
+                }
+            }
+            
+            .select-items div, .select-selected {
+                color: $grey-lighter;
+            }
+            
+            .select-selected {
+                border: 2px solid $grey;
+            }
+            
+            .select-items {
+                background-color: $dark-white;
+                border-left: 2px solid $grey;
+                border-right: 2px solid $grey;
+                border-bottom: 2px solid $grey;
+            }
+            
+            .select-items div:hover, .same-as-selected {
+                background-color: $dark-white-ter;
+                color: $primary;
+            }
+        }
+        
+        a {
+            &.hover-button {
+                &:hover {
+                    background-color: $dark-white-ter;
+                }
+            }
+        }
+        
+        .button {
+        
+            &.white {
+                background-color: $dark-white;
+                color: $grey-lighter;
+        
+                transition: all 200ms;
+                &:hover, &:focus {
+                    filter: brightness(150%);
+                }
+            }
+            
+            &.light {
+                background-color: $dark-white-ter;
+                color: $grey-lighter;
+        
+                transition: all 200ms;
+                &:hover, &:focus {
+                    filter: brightness(150%);
+                }
+            }
+        }
+
+        .badge {
+            background-color: $grey-darker;
+            color: $white;
+        }
+        
+        .container {
+            .panel {
+                background-color: $dark-white-ter;
+                color: $grey-lighter;
+            }
+        }
+    }
+}
